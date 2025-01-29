@@ -8,7 +8,7 @@
     GitHub          : github.com/CyberHawk318
     Date Created    : 2025-01-29
     Last Modified   : 2025-01-29
-    Version         : 1.0
+    Version         : 1.1
     CVEs            : N/A
     Plugin IDs      : N/A
     STIG-ID         : WN10-SO-000030 
@@ -21,6 +21,23 @@
 
 .USAGE
     Run script in Powershell as administrator
+    restart device after code is run to apply changes
 #>
 
-# auditpol /set /option:CategoryOptions /value:1
+# YOUR CODE GOES HERE
+# # Define the registry path and setting name
+$RegPath = "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa"
+$RegName = "SCENoApplyLegacyAuditPolicy"
+$RegValue = 1  # 1 = Enabled, 0 = Disabled
+
+# Check if the registry key exists, if not, create it
+If (!(Test-Path $RegPath)) {
+    New-Item -Path $RegPath -Force | Out-Null
+}
+
+# Set the registry value
+Set-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -Type DWord
+
+# Output result
+Write-Host "Audit policy subcategories have been enabled."
+
