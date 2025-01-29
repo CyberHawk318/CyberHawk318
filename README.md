@@ -6,7 +6,7 @@ I'm passionate about cybersecurity and love tackling complex challenges through 
 ## ⚠️ Vulnerability Management Projects
 
 - **[Vulnerability Management Program Implementation](https://github.com/CyberHawk318/vulnerability-management-program/blob/main/README.md)**
-- **[Programmatic Vulnerability Remediations (PowerShell and BASH)]()**
+<!-- **[Programmatic Vulnerability Remediations (PowerShell and BASH)]()** -->
 
 ## 🚨 Threat Hunting and Security Operations
 
