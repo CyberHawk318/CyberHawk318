@@ -1,0 +1,35 @@
+<#
+.SYNOPSIS
+    This PowerShell script enables the command line in process creaton events
+
+.NOTES
+    Author          : Daryl Hawkins
+    LinkedIn        : linkedin.com/in/darylhawkins1/
+    GitHub          : github.com/CyberHawk318
+    Date Created    : 2025-01-30
+    Last Modified   : 2025-01-30
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-CC-000066
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+    Run script in Powershell as administrator
+    
+#>
+
+# YOUR CODE GOES HERE
+# # Ensure the registry path exists
+New-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System\Audit" -Force
+
+# Set the policy value to Enabled (1)
+Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System\Audit" -Name "ProcessCreationIncludeCmdLine_Enabled" -Value 1 -Type DWord
+
+# Force Group Policy Update
+gpupdate /force
