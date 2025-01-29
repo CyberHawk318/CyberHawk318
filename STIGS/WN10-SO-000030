@@ -1,0 +1,26 @@
+<#
+.SYNOPSIS
+    This PowerShell script enables the "Audit: Force audit policy subcategory settings (Windows Vista or later)" option in the local group policy.
+
+.NOTES
+    Author          : Daryl Hawkins
+    LinkedIn        : linkedin.com/in/darylhawkins1/
+    GitHub          : github.com/CyberHawk318
+    Date Created    : 2025-01-29
+    Last Modified   : 2025-01-29
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-SO-000030 
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+    Run script in Powershell as administrator
+#>
+
+# auditpol /set /option:CategoryOptions /value:1
