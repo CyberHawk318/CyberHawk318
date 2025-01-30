@@ -1,0 +1,30 @@
+<#
+.SYNOPSIS
+    This PowerShell script enables the 'Turn off printing over HTTP' in group policy settings.
+
+
+.NOTES
+    Author          : Daryl Hawkins
+    LinkedIn        : linkedin.com/in/darylhawkins1/
+    GitHub          : github.com/CyberHawk318
+    Date Created    : 2025-01-30
+    Last Modified   : 2025-01-30
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-CC-000110
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+    Run script in Powershell as administrator
+    
+#>
+
+# YOUR CODE GOES HERE
+# New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows NT\Printers" -Force
+Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows NT\Printers" -Name "DisableHTTPPrinting" -Value 1 -Type DWord
