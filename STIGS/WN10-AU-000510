@@ -1,0 +1,39 @@
+<#
+.SYNOPSIS
+    This PowerShell script configures the system event log size to 32768 KB. 
+
+.NOTES
+    Author          : Daryl Hawkins
+    LinkedIn        : linkedin.com/in/darylhawkins1/
+    GitHub          : github.com/CyberHawk318
+    Date Created    : 2025-02-04
+    Last Modified   : 2025-02-04
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-AU-000510
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+    Run script in Powershell as administrator
+#>
+
+# YOUR CODE GOES HERE
+# $RegPath = "HKLM:\Software\Policies\Microsoft\Windows\EventLog\System"
+
+# Ensure the registry path exists
+If (!(Test-Path $RegPath)) {
+    New-Item -Path $RegPath -Force | Out-Null
+}
+
+# Set "Specify the maximum log file size (KB)" to Enabled (set the max size to 32,768 KB)
+Set-ItemProperty -Path $RegPath -Name "MaxSize" -Value 32768 -Type DWord
+
+# Force update Group Policy settings
+gpupdate /force
+
