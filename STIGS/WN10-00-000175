@@ -1,0 +1,27 @@
+<#
+.SYNOPSIS
+    This PowerShell script dissables the "Secondary Logon" service
+
+.NOTES
+    Author          : Daryl Hawkins
+    LinkedIn        : linkedin.com/in/darylhawkins1/
+    GitHub          : github.com/CyberHawk318
+    Date Created    : 2025-02-04
+    Last Modified   : 2025-02-04
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-00-000175
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+    Run script in Powershell as administrator
+#>
+
+# YOUR CODE GOES HERE
+# Set-Service -Name "seclogon" -StartupType Disabled
