@@ -1,0 +1,38 @@
+<#
+.SYNOPSIS
+    This PowerShell script disables the enumerations of administrator accounts on elevation. 
+
+.NOTES
+    Author          : Daryl Hawkins
+    LinkedIn        : linkedin.com/in/darylhawkins1/
+    GitHub          : github.com/CyberHawk318
+    Date Created    : 2025-02-04
+    Last Modified   : 2025-02-04
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-CC-000200
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+    Run script in Powershell as administrator
+#>
+
+# YOUR CODE GOES HERE
+# $RegPath = "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\CredUI"
+
+# Ensure the registry path exists
+If (!(Test-Path $RegPath)) {
+    New-Item -Path $RegPath -Force | Out-Null
+}
+
+# Set "Enumerate administrator accounts on elevation" to Disabled (0)
+Set-ItemProperty -Path $RegPath -Name "EnumerateAdministrators" -Value 0 -Type DWord
+
+# Force update Group Policy settings
+gpupdate /force
