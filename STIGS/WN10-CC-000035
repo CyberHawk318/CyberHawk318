@@ -1,0 +1,40 @@
+<#
+.SYNOPSIS
+    This PowerShell script configres the system to ignore NETBIOS name release requests except form WINS servers.
+
+.NOTES
+    Author          : Daryl Hawkins
+    LinkedIn        : linkedin.com/in/darylhawkins1/
+    GitHub          : github.com/CyberHawk318
+    Date Created    : 2025-02-13
+    Last Modified   : 2025-02-13
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-CC-000035
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+    Run script in Powershell as administrator
+#>
+
+# YOUR CODE GOES HERE
+# Define the registry path and value name
+$RegistryPath = "HKLM:\SYSTEM\CurrentControlSet\Services\NetBT\Parameters"
+$ValueName = "NoNameReleaseOnDemand"
+
+# Ensure the registry path exists
+if (-not (Test-Path $RegistryPath)) {
+    New-Item -Path $RegistryPath -Force | Out-Null
+}
+
+# Set the policy value to 'Enabled' (1)
+Set-ItemProperty -Path $RegistryPath -Name $ValueName -Value 1 -Type DWord
+
+# Force Group Policy update (optional)
+gpupdate /force
