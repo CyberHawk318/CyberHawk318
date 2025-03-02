@@ -14,14 +14,14 @@ I'm passionate about cybersecurity and love tackling complex challenges through 
 
 <hr/>
 
-## 🤳 Connect With Me
+<!--## 🤳 Connect With Me
 
 
 [<img align="left" alt="___________ | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
 
 
 
-[linkedin]: https://linkedin.com/in/darylhawkins1/
+[linkedin]: https://linkedin.com/in/darylhawkins1/-->
 
 <!--
 <img width="35" alt="image" src="https://github.com/user-attachments/assets/2f41c7cd-5ea8-4475-b451-a37161b6c3fb"> 
